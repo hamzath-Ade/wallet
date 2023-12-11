@@ -7,4 +7,6 @@ module invest.portefeuille {
 
     opens invest.portefeuille to javafx.fxml;
     exports invest.portefeuille;
+    exports src.main.java.invest.portefeuille;
+    opens src.main.java.invest.portefeuille to javafx.fxml;
 }

@@ -1,4 +1,4 @@
-package src.main.java.invest.portefeuille;
+package invest.portefeuille;
 
 public class Conversion {
     //Contient toutes les valeurs des differents actif mis à jour en fonction du temps

@@ -1,4 +1,4 @@
-package src.main.java.invest.portefeuille;
+package invest.portefeuille;
 
 public class Results {
     //Contient les divers fluctuation du marché

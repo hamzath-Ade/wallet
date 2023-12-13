@@ -1,4 +1,4 @@
-package src.main.java.invest.portefeuille;
+package invest.portefeuille;
 
 public class Wallet {
     //Va contenir tout ce que l'utilisateur possede comme investissement

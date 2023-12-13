@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.stage.*?>
+
+
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="invest.portefeuille.Dashboard">
+                 <content>
+                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="443.0" prefWidth="564.0">
+                        <children>
+                           <Button mnemonicParsing="false" text="Plus" />
+                           <Label layoutX="6.0" layoutY="48.0" prefHeight="39.0" prefWidth="528.0" text="Ce label va afficher le solde du portefeuille en temps réel, le graphique en dessous va afficher l'evolution du portefeuille en foonction du temps" />
+                           <LineChart layoutX="270.0" layoutY="87.0" prefHeight="180.0" prefWidth="256.0">
+                             <xAxis>
+                               <CategoryAxis side="BOTTOM" />
+                             </xAxis>
+                             <yAxis>
+                               <NumberAxis side="LEFT" />
+                             </yAxis>
+                           </LineChart>
+                           <ListView layoutX="29.0" layoutY="107.0" prefHeight="141.0" prefWidth="241.0" />
+                        </children>
+                     </AnchorPane>
+                 </content>
+</ScrollPane>
+
+

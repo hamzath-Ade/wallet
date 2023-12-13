@@ -1,4 +1,4 @@
 package invest.portefeuille;
 
-public class Utilisateur {
+public class User {
 }

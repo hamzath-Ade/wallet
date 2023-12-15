@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="invest.portefeuille.Dashboard">
-                 <content>
+    <content>
                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="443.0" prefWidth="564.0">
                         <children>
                            <Button fx:id="plusButton" mnemonicParsing="false" text="Plus" />
@@ -20,6 +20,6 @@
                            </LineChart>
                            <ListView layoutX="29.0" layoutY="107.0" prefHeight="141.0" prefWidth="241.0" />
                         </children>
-                     </AnchorPane>
-                 </content>
+                   </AnchorPane>
+    </content>
 </ScrollPane>

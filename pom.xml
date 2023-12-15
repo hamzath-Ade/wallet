@@ -47,16 +47,14 @@
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/io.github.binance/binance-connector-java -->
     <dependency>
-      <groupId>io.github.serg-maximchuk</groupId>
-      <artifactId>binance-api-client</artifactId>
-      <version>1.0.6</version>
+      <groupId>io.github.binance</groupId>
+      <artifactId>binance-connector-java</artifactId>
+      <version>3.1.0</version>
     </dependency>
-    <dependency>
-      <groupId>com.binance.api</groupId>
-      <artifactId>binance-java-api</artifactId>
-      <version>1.0.11</version>
-    </dependency>
+
 
   </dependencies>
 

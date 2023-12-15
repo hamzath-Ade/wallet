@@ -5,6 +5,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>invest</groupId>
+  <!--groupId>com.binance.api</groupId-->
+  <!--artifactId>binance-api-client</artifactId-->
   <artifactId>Portefeuille</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>Portefeuille</name>
@@ -44,7 +46,19 @@
       <artifactId>junit-jupiter-engine</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
-    </dependency>  </dependencies>
+    </dependency>
+    <dependency>
+      <groupId>io.github.serg-maximchuk</groupId>
+      <artifactId>binance-api-client</artifactId>
+      <version>1.0.6</version>
+    </dependency>
+    <dependency>
+      <groupId>com.binance.api</groupId>
+      <artifactId>binance-java-api</artifactId>
+      <version>1.0.11</version>
+    </dependency>
+
+  </dependencies>
 
   <build>
     <plugins>

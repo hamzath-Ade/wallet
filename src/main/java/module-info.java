@@ -4,6 +4,7 @@ module invest.portefeuille {
 
     requires org.controlsfx.controls;
     requires org.kordamp.bootstrapfx.core;
+    requires binance.api.client;
 
     opens invest.portefeuille to javafx.fxml;
     exports invest.portefeuille;

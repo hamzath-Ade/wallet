@@ -47,11 +47,18 @@
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/io.github.binance/binance-connector-java -->
+    <!-- https://mvnrepository.com/artifact/io.github.binance/binance-connector-java
+    L'API binance n'est pas utiliser jusqu'à mention contraire.-->
     <dependency>
       <groupId>io.github.binance</groupId>
       <artifactId>binance-connector-java</artifactId>
       <version>3.1.0</version>
+    </dependency>
+
+    <dependency><!-- Cette dependance est utilisée pour obtenir les données crypto-->
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.9.4</version>
     </dependency>
   </dependencies>
 

@@ -6,7 +6,7 @@ module invest.portefeuille {
     requires org.kordamp.bootstrapfx.core;
    // requires binance.api.client;
     requires java.net.http;
-    requires com.fasterxml.jackson.databind;
+    //requires com.fasterxml.jackson.databind;
 
     opens invest.portefeuille to javafx.fxml;
     exports invest.portefeuille;

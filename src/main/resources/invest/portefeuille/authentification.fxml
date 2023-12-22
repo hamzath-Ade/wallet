@@ -3,50 +3,43 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="invest.portefeuille.Authentification">
-  <content>
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="invest.portefeuille.Authentification">
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <SplitPane dividerPositions="0.43080357142857145" prefHeight="400.0" prefWidth="600.0">
-              <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="397.0" prefWidth="250.0">
-                     <children>
-                        <TextField layoutX="87.0" layoutY="100.0" />
-                        <TextField layoutX="87.0" layoutY="144.0" />
-                        <Label layoutX="36.0" layoutY="104.0" text="email" />
-                        <Label layoutX="14.0" layoutY="148.0" text="mot de passe" />
-                        <Button layoutX="75.0" layoutY="232.0" mnemonicParsing="false" text="Valider" />
-                        <TitledPane animated="false" layoutX="36.0" layoutY="14.0" prefHeight="24.0" prefWidth="182.0" text="CONNEXION">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                          </content>
-                        </TitledPane>
-                     </children></AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="92.0">
-                     <children>
-                        <TextField layoutX="123.0" layoutY="112.0" />
-                        <TextField layoutX="123.0" layoutY="158.0" />
-                        <TextField layoutX="123.0" layoutY="269.0" />
-                        <TextField layoutX="123.0" layoutY="231.0" />
-                        <TextField layoutX="123.0" layoutY="194.0" />
-                        <TextField layoutX="123.0" layoutY="302.0" />
-                        <TextField layoutX="123.0" layoutY="74.0" />
-                        <Label layoutX="40.0" layoutY="162.0" text="Email" />
-                        <Label layoutX="28.0" layoutY="116.0" text="Prenom" />
-                        <Label layoutX="28.0" layoutY="78.0" text="Nom" />
-                        <Label layoutX="28.0" layoutY="235.0" text="Mot de passe" />
-                        <Label layoutX="1.0" layoutY="198.0" text="Confirmation d'email" />
-                        <Label layoutX="28.0" layoutY="306.0" text="clé d'API" />
-                        <Label layoutX="-2.0" layoutY="273.0" text="confirmation mot de passe" />
-                        <Button layoutX="123.0" layoutY="342.0" mnemonicParsing="false" text="Save" />
-                        <TitledPane animated="false" layoutX="78.0" layoutY="14.0" prefHeight="23.0" prefWidth="171.0" text="PREMIERE VISITE">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                          </content>
-                        </TitledPane>
-                     </children></AnchorPane>
-              </items>
-            </SplitPane>
-         </children></AnchorPane>
-  </content>
+        <SplitPane dividerPositions="0.43080357142857145" prefHeight="400.0" prefWidth="600.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="397.0" prefWidth="250.0">
+                <TextField layoutX="87.0" layoutY="100.0"/>
+                <TextField layoutX="87.0" layoutY="144.0"/>
+                <Label layoutX="36.0" layoutY="104.0" text="email"/>
+                <Label layoutX="14.0" layoutY="148.0" text="mot de passe"/>
+                <Button layoutX="75.0" layoutY="232.0" mnemonicParsing="false" text="Valider"/>
+                <TitledPane animated="false" layoutX="36.0" layoutY="14.0" prefHeight="24.0"
+                            prefWidth="182.0" text="CONNEXION">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+                </TitledPane>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="92.0">
+                <TextField layoutX="123.0" layoutY="112.0"/>
+                <TextField layoutX="123.0" layoutY="158.0"/>
+                <TextField layoutX="123.0" layoutY="269.0"/>
+                <TextField layoutX="123.0" layoutY="231.0"/>
+                <TextField layoutX="123.0" layoutY="194.0"/>
+                <TextField layoutX="123.0" layoutY="302.0"/>
+                <TextField layoutX="123.0" layoutY="74.0"/>
+                <Label layoutX="40.0" layoutY="162.0" text="Email"/>
+                <Label layoutX="28.0" layoutY="116.0" text="Prenom"/>
+                <Label layoutX="28.0" layoutY="78.0" text="Nom"/>
+                <Label layoutX="28.0" layoutY="235.0" text="Mot de passe"/>
+                <Label layoutX="1.0" layoutY="198.0" text="Confirmation d'email"/>
+                <Label layoutX="28.0" layoutY="306.0" text="clé d'API"/>
+                <Label layoutX="-2.0" layoutY="273.0" text="confirmation mot de passe"/>
+                <Button layoutX="123.0" layoutY="342.0" mnemonicParsing="false" text="Save"/>
+                <TitledPane animated="false" layoutX="78.0" layoutY="14.0" prefHeight="23.0"
+                            prefWidth="171.0" text="PREMIERE VISITE">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0"/>
+                </TitledPane>
+            </AnchorPane>
+        </SplitPane>
+    </AnchorPane>
 </ScrollPane>

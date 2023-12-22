@@ -1,7 +1,7 @@
 package invest.portefeuille;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+//import com.fasterxml.jackson.databind.JsonNode;
+//import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -11,7 +11,7 @@ import java.net.http.HttpResponse;
 
 public class ApiGestion {
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         try {
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
@@ -19,13 +19,13 @@ public class ApiGestion {
                     .build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-            ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode jsonNode = objectMapper.readTree(response.body());
-            double bitcoinPriceInUSD = jsonNode.get("bitcoin").get("usd").asDouble();
+            //ObjectMapper objectMapper = new ObjectMapper();
+            //JsonNode jsonNode = objectMapper.readTree(response.body());
+            //double bitcoinPriceInUSD = jsonNode.get("bitcoin").get("usd").asDouble();
 
             System.out.println("1 Bitcoin price in USD: " + bitcoinPriceInUSD);
             System.out.println("2 Bitcoin price in USD: " + bitcoinPriceInUSD);
-            double bitcoinPriceInUSD2 = jsonNode.get("bitcoin").get("usd").asDouble();
+            //double bitcoinPriceInUSD2 = jsonNode.get("bitcoin").get("usd").asDouble();
             System.out.println("3 Bitcoin price in USD: " + bitcoinPriceInUSD2);
             System.out.println("4 Bitcoin price in USD: " + bitcoinPriceInUSD2);
         } catch (IOException | InterruptedException e) {
@@ -38,4 +38,5 @@ public class ApiGestion {
 
    /* BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance(apiKey, apiSecret);
     BinanceApiRestClient client = factory.newRestClient();*/
+
 }

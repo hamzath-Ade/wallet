@@ -11,8 +11,8 @@
                 <TextField fx:id="textFieldPasswordConnexion" layoutX="127.0" layoutY="144.0" />
                 <Label layoutX="36.0" layoutY="104.0" text="email" />
                 <Label layoutX="14.0" layoutY="148.0" text="mot de passe" />
-            <Label layoutX="13.0" layoutY="199.0" prefHeight="25.0" prefWidth="274.0" text="Label" />
-                <Button layoutX="127.0" layoutY="260.0" mnemonicParsing="false" onAction="#connexion" text="Valider" />
+            <Label text="Label" />
+                <Button layoutX="95.0" layoutY="232.0" mnemonicParsing="false" onAction="#connexion" text="Valider" />
                 <TitledPane animated="false" layoutX="36.0" layoutY="14.0" prefHeight="24.0" prefWidth="182.0" text="CONNEXION">
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                 </TitledPane>

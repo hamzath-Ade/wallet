@@ -1,5 +1,7 @@
 package invest.portefeuille;
 
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -15,9 +17,10 @@ import java.net.URL;
 public class ApiGestion {
 
 
-        // JSONObject donneesConvertJson = new JSONObject();
+
         public static void main(String[] args) {
             try {
+
 
                 String apiKey = "coinranking47b4fd6e60c7f67669e1e6a0eb59c257e12baf5e9bec70a3";
                 URL url = new URL("https://api.coinranking.com/v2/coin/Qwsogvtv82FCd/history?apiKey=" + apiKey);
@@ -56,8 +59,14 @@ public class ApiGestion {
                 System.out.println("Price: " + price + ", Timestamp: " + timestamp);
             }
 
+
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
+
+
         }
+
 }

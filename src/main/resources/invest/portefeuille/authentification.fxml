@@ -36,7 +36,7 @@
                 <TitledPane animated="false" layoutX="78.0" layoutY="14.0" prefHeight="23.0" prefWidth="171.0" text="PREMIERE VISITE">
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                 </TitledPane>
-            <Label layoutX="47.0" layoutY="348.0" prefHeight="16.0" prefWidth="276.0" text="Label" />
+            <Label layoutX="70.0" layoutY="344.0" prefHeight="16.0" prefWidth="276.0" text="Label" />
             </AnchorPane>
         </SplitPane>
     </AnchorPane>

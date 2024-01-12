@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Main extends Application {
-    Stage authentification;
+    static Stage authentification;
 
     public static void main(String[] args) {
         launch(args);
@@ -16,8 +16,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Dashboard.class.getResource("dashboard.fxml"));
-
+        FXMLLoader fxmlLoader = new FXMLLoader(Dashboard.class.getResource("authentification.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),  320, 240);
 
 

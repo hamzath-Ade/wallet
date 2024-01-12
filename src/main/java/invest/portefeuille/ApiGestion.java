@@ -1,42 +1,63 @@
 package invest.portefeuille;
 
-/*import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;*/
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 
 
 public class ApiGestion {
 
-    public static void main(String[] args) {
-        /*try {
-            HttpClient client = HttpClient.newHttpClient();
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("https://api.coinranking.com/v2"))
-                    .build();
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-            //ObjectMapper objectMapper = new ObjectMapper();
-            //JsonNode jsonNode = objectMapper.readTree(response.body());
-            //double bitcoinPriceInUSD = jsonNode.get("bitcoin").get("usd").asDouble();
+        // JSONObject donneesConvertJson = new JSONObject();
+        public static void main(String[] args) {
+            try {
 
-            System.out.println("1 Bitcoin price in USD: " + bitcoinPriceInUSD);
-            System.out.println("2 Bitcoin price in USD: " + bitcoinPriceInUSD);
-            //double bitcoinPriceInUSD2 = jsonNode.get("bitcoin").get("usd").asDouble();
-            System.out.println("3 Bitcoin price in USD: " + bitcoinPriceInUSD2);
-            System.out.println("4 Bitcoin price in USD: " + bitcoinPriceInUSD2);
-        } catch (IOException | InterruptedException e) {
-            System.out.println("Error while connecting to API: " + e.getMessage());
-        }*/
-    }
+                String apiKey = "coinranking47b4fd6e60c7f67669e1e6a0eb59c257e12baf5e9bec70a3";
+                URL url = new URL("https://api.coinranking.com/v2/coin/Qwsogvtv82FCd/history?apiKey=" + apiKey);
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("GET");
+                connection.connect();
 
-   // String apiKey = "Sgmx2G8wNNutr00WSPa88Z4wzbNfGrxV4ueYmZOURZFEuIHBdk8M1Ec92LF4itmk"; //Api key
-   // String apiSecret = "167zQCKFy94t0IDMOxDEFXp5QpHtQeGDjXX5v5NENUPAZ240yTDS2yKhrXXeyk96"; //Secret key
+                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                String line;
+                StringBuilder response = new StringBuilder();
 
-   /* BinanceApiClientFactory factory = BinanceApiClientFactory.newInstance(apiKey, apiSecret);
-    BinanceApiRestClient client = factory.newRestClient();*/
+                JSONObject jsonObject = new JSONObject();
+                while ((line = reader.readLine()) != null) {
+                    response.append(line);
 
+                }
+                jsonObject = new JSONObject(response.toString());
+
+
+
+                JSONObject data = jsonObject.getJSONObject("data");
+
+                System.out.println(response.toString());
+
+
+                    System.out.println(jsonObject);
+
+
+                JSONArray historyArray = data.getJSONArray("history");
+                //System.out.println(donneesConvertJson.get("status"));
+
+           for (int i = 0; i < historyArray.length(); i++) {
+                JSONObject historyObject = historyArray.getJSONObject(i);
+                String price = historyObject.getString("price");
+                long timestamp = historyObject.getLong("timestamp");
+                System.out.println("Price: " + price + ", Timestamp: " + timestamp);
+            }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 }

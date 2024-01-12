@@ -65,6 +65,11 @@
       <artifactId>json</artifactId>
       <version>20231013</version>
     </dependency>
+      <dependency>
+          <groupId>org.openjfx</groupId>
+          <artifactId>javafx-graphics</artifactId>
+          <version>21-ea+24</version>
+      </dependency>
   </dependencies>
 
   <build>
@@ -76,6 +81,7 @@
         <configuration>
           <source>21</source>
           <target>21</target>
+            <compilerArgs>--enable-preview</compilerArgs>
         </configuration>
       </plugin>
       <plugin>

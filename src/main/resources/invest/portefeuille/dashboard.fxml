@@ -8,9 +8,9 @@
     <content>
                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="443.0" prefWidth="564.0">
                         <children>
-                           <Button fx:id="plusButton" mnemonicParsing="false" text="Plus" />
+                           <Button fx:id="plusButton" mnemonicParsing="false" onAction="#moreinformations" text="Plus" />
                            <Label layoutX="6.0" layoutY="48.0" prefHeight="39.0" prefWidth="528.0" text="Ce label va afficher le solde du portefeuille en temps réel, le graphique en dessous va afficher l'evolution du portefeuille en foonction du temps" />
-                           <LineChart layoutX="48.0" layoutY="78.0" prefHeight="180.0" prefWidth="256.0">
+                           <LineChart fx:id="diagramview" layoutX="48.0" layoutY="78.0" prefHeight="180.0" prefWidth="256.0">
                              <xAxis>
                                <CategoryAxis side="BOTTOM" />
                              </xAxis>
@@ -19,9 +19,9 @@
                              </yAxis>
                            </LineChart>
                            <ListView layoutX="55.0" layoutY="258.0" prefHeight="141.0" prefWidth="241.0" />
-            <Button layoutX="357.0" layoutY="103.0" mnemonicParsing="false" text="refresh" />
-            <Button layoutX="357.0" layoutY="136.0" mnemonicParsing="false" text="converte to euro" />
-            <Button layoutX="357.0" layoutY="168.0" mnemonicParsing="false" text="converte to crypto" />
+            <Button fx:id="refreshbutton" layoutX="357.0" layoutY="103.0" mnemonicParsing="false" onAction="#refreshinformation" text="refresh" />
+            <Button fx:id="eurobutton" layoutX="357.0" layoutY="136.0" mnemonicParsing="false" onAction="#converttoeuro" text="converte to euro" />
+            <Button fx:id="cryptobutton" layoutX="357.0" layoutY="168.0" mnemonicParsing="false" onAction="#converttocrypto" text="converte to crypto" />
                         </children>
                    </AnchorPane>
     </content>

@@ -11,12 +11,12 @@
         <Label fx:id="prenom" layoutX="53.0" layoutY="150.0" text="Prenom" />
         <Label fx:id="confirmationmdp" layoutX="39.0" layoutY="321.0" text="Confirmer nouveau mot de passe" />
         <Label fx:id="nouveaumdp" layoutX="39.0" layoutY="281.0" text="Nouveau mot de passe" />
-        <TextField layoutX="221.0" layoutY="146.0" />
-        <TextField layoutX="221.0" layoutY="195.0" />
-        <TextField layoutX="221.0" layoutY="237.0" />
-        <TextField layoutX="221.0" layoutY="277.0" />
-        <TextField layoutX="221.0" layoutY="317.0" />
-        <TextField layoutX="221.0" layoutY="98.0" />
+        <TextField fx:id="textFieldPrenom" layoutX="221.0" layoutY="146.0" />
+        <TextField fx:id="textFieldEmail" layoutX="221.0" layoutY="195.0" />
+        <TextField fx:id="textFieldOldPassword" layoutX="221.0" layoutY="237.0" />
+        <TextField fx:id="textFieldNewPassword" layoutX="221.0" layoutY="277.0" />
+        <TextField fx:id="textFieldNewPasswordConfirm" layoutX="221.0" layoutY="317.0" />
+        <TextField fx:id="textFieldNom" layoutX="221.0" layoutY="98.0" />
         <Label layoutX="46.0" layoutY="241.0" prefHeight="0.0" prefWidth="28.0" />
         <Label fx:id="ancienmdp" layoutX="39.0" layoutY="241.0" text="Ancien mot de passe" />
         <Button fx:id="valider" layoutX="370.0" layoutY="342.0" mnemonicParsing="false" onAction="#savenewinformation" text="Valider" />

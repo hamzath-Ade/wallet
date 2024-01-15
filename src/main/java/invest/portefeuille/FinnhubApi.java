@@ -12,10 +12,10 @@ public class FinnhubApi {
 
     public static void main(String[] args) {
         try {
-            // Remplacez cette clé avec votre propre clé API de Finnhub
+            //Clé API Finnhub utilisée pour la requette
             String apiKey = "cmhj8mhr01qmgvctraqgcmhj8mhr01qmgvctrar0";
 
-            // URL de l'API de Finnhub pour obtenir les cotations de l'actif (exemple avec AAPL)
+            // URL de l'API de Finnhub pour obtenir les cotations de l'actif (exemple avec AAPL qui est l'action Apple)
             URL url = new URL("https://finnhub.io/api/v1/quote?symbol=AAPL&token=" + apiKey);
 
             // Établir la connexion HTTP

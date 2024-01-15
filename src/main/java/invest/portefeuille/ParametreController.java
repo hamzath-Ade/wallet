@@ -123,6 +123,10 @@ public class ParametreController {
             while ((line = reader.readLine()) != null) {
                 existingLines.add(line);
             }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
         boolean userExists = existingLines.stream().anyMatch(line -> line.contains(nom + ";" + prenom + ";" + email));

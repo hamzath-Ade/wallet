@@ -10,10 +10,12 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ParametreController {
 
-    @FXML
+    /* @FXML
     private Label email, nom, prenom, confirmationmdp, nouveaumdp, ancienmdp;
 
     @FXML
@@ -28,7 +30,7 @@ public class ParametreController {
 
     // Méthode pour le bouton retour
     @FXML
-    private void pageprecedente() {
+    public void pageprecedente() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
             Scene scene = new Scene(root);
@@ -42,7 +44,7 @@ public class ParametreController {
 
     // Méthode pour le bouton valider
     @FXML
-    private void savenewinformation() throws IOException {
+    public void savenewinformation() throws IOException {
         String nomUtilisateur = textFieldNom.getText();
         String prenomUtilisateur = textFieldPrenom.getText();
         String emailUtilisateur = textFieldEmail.getText();
@@ -98,5 +100,37 @@ public class ParametreController {
         if (!tempFile.renameTo(originalFile)) {
             throw new IOException("Could not update the original file with the new data.");
         }
+    }*/
+    @FXML
+    Label labelInfo;
+    @FXML
+    private TextField textFieldNom, textFieldPrenom, textFieldEmail, textFieldOldPassword, textFieldNewPassword,textFieldNewPasswordConfirm;
+    @FXML
+    public void parametreEnregistrer(){
+        String registeredUser = "C:/Users/mathu/IdeaProjects/wallet/Compte.csv";
+        String nom=textFieldNom.getText();
+        String prenom = textFieldPrenom.getText();
+        String email = textFieldEmail.getText();
+        String ancienPassword = textFieldOldPassword.getText();
+        String nouveauPassword = textFieldNewPassword.getText();
+        String nouveauPasswordConfirm = textFieldNewPasswordConfirm.getText();
+        Label label =labelInfo;
+        List<String> existingLines = new ArrayList<>();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(registeredUser))) {
+            // Lire les lignes existantes du fichier CSV
+            String line;
+            while ((line = reader.readLine()) != null) {
+                existingLines.add(line);
+            }
+        }
+
+        boolean userExists = existingLines.stream().anyMatch(line -> line.contains(nom + ";" + prenom + ";" + email));
+        if (userExists) {
+
+        }
+
+
     }
+
 }

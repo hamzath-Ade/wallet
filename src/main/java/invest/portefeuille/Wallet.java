@@ -10,12 +10,21 @@ public class Wallet {
 
     static Random random = new Random();
     private final String owner;
-    private  int token;
-
+    private  int token = random.nextInt(100);
+    private  double valeurPortefeuille = 0.0;
+    private String description;
 
     //CONSTRUCTEUR
-    public Wallet(String owner) {
+    public Wallet(String owner, String description) {
         this.owner = owner;
+        this.description = description;
+    }
 
+    //Les getters
+    public String getOwner() {
+        return owner;
+    }
+    public   int getToken(){
+        return token;
     }
 }

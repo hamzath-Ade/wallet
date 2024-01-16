@@ -32,7 +32,7 @@ public class DashboardController {
 
         try {
             String apiKey = "coinranking47b4fd6e60c7f67669e1e6a0eb59c257e12baf5e9bec70a3";
-            URL url = new URL("https://api.coinranking.com/v2/coin/Qwsogvtv82FCd/history?apiKey=" + apiKey);
+            URL url = new URL("https://api.coinranking.com/v2/coin/Qwsogvtv82FCd/history?timePeriod=1y"/*apiKey=" + apiKey*/);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.connect();

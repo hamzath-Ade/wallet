@@ -16,7 +16,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Dashboard.class.getResource("dashboard.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Dashboard.class.getResource("walletGestion.fxml"));
         Scene scene = new Scene(fxmlLoader.load(),  320, 240);
 
 

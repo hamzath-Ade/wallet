@@ -7,6 +7,7 @@ module invest.portefeuille {
    // requires binance.api.client;
     requires java.net.http;
     requires org.json;
+    requires org.apache.commons.lang3;
     //requires com.fasterxml.jackson.databind;
 
     opens invest.portefeuille to javafx.fxml;

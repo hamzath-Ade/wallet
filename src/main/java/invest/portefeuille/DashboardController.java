@@ -29,25 +29,24 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.Initializable;
 
-public class DashboardController implements Initializable{
+public class DashboardController implements Initializable {
 
     @FXML
     private LineChart<String,Double>  diagramview;
     @FXML
     ListView listView;
 
-    List<WalletGestion> mesWallet = WalletGestionController.mesWallet;
-    ObservableList<WalletGestion> items = FXCollections.observableArrayList();
+    List<String> mesWallet = WalletGestionController.mesWallet ;
+    ObservableList<String> items = FXCollections.observableArrayList();
 
-    @Override
+  @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        for (WalletGestion wallet : mesWallet ) {
-            items.add(wallet);
-        }
+      items.addAll(mesWallet);
+      //System.out.println(items);
 
-
-        // Création de la vue de la liste
-        ListView<WalletGestion> listView = new ListView<>(items);
+      // Création de la vue de la liste
+      //listView = new ListView<>(items);
+      listView.setItems(items);
     }
 
     @FXML
@@ -108,6 +107,7 @@ public class DashboardController implements Initializable{
 
     @FXML
     protected void moreInformations(){
+
 
     }
 @FXML

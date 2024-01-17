@@ -63,30 +63,30 @@ public class AuthentificationController {
             Main.authentification.show();
         }
         //si faux, on a un message d'erreur
-            else{
+        else{
             label.setText("Les informations que vous avez fournies sont incorrectes. Veuillez réessayer !");
         }
     }
-public void inscription()throws IOException{
-    String registeredUser = "Compte.csv";
-    String nom= textFieldNom.getText();
-    String prenom= textFieldPrenom.getText();
-    String email=textFieldEmailInscription.getText();
-    String emailConfirm= textFieldEmailConfirmInscription.getText();
-    String password =textFieldPasswordInscription.getText();
-    String passwordConfirm =textFieldPasswordConfirmInscription.getText();
-    String cleApi=textFieldCleApi.getText();
-    List<String> existingLines = new ArrayList<>();
+    public void inscription()throws IOException{
+        String registeredUser = "Compte.csv";
+        String nom= textFieldNom.getText();
+        String prenom= textFieldPrenom.getText();
+        String email=textFieldEmailInscription.getText();
+        String emailConfirm= textFieldEmailConfirmInscription.getText();
+        String password =textFieldPasswordInscription.getText();
+        String passwordConfirm =textFieldPasswordConfirmInscription.getText();
+        String cleApi=textFieldCleApi.getText();
+        List<String> existingLines = new ArrayList<>();
 
-    //Créer un booléen qui va permettre de voir si il est dans le fichier
-    boolean emailExists = existingLines.stream().anyMatch(line -> line.contains(email));
-    //si vrai, on va envoyer un message d'erreur
+        //Créer un booléen qui va permettre de voir si il est dans le fichier
+        boolean emailExists = existingLines.stream().anyMatch(line -> line.contains(email));
+        //si vrai, on va envoyer un message d'erreur
         if (emailExists) {
-                labelError2.setText("Cette adresse e-mail est déjà utilisée");
+            labelError2.setText("Cette adresse e-mail est déjà utilisée");
         }
         // si faux,on va créer un compte
         else {
-        //si un de données ne sont pas rempli, on va envoyer un message d'erreur
+            //si un de données ne sont pas rempli, on va envoyer un message d'erreur
             if (nom.isEmpty() || prenom.isEmpty() || email.isEmpty() || emailConfirm.isEmpty() || password.isEmpty()|| passwordConfirm.isEmpty() || cleApi.isEmpty()) {
                 labelError2.setText("Tous les champs doivent être remplis.");
             }
@@ -112,5 +112,5 @@ public void inscription()throws IOException{
 
         }
 
-}
+    }
 }

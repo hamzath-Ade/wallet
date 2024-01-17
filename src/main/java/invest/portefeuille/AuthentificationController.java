@@ -74,7 +74,7 @@ public class AuthentificationController {
     }
     @FXML
     public void inscription() throws IOException {
-        String registeredUser = "C:/Users/elena/IdeaProjects/wallet/Compte.csv";
+        String registeredUser = "Compte.csv";
         String nom = textFieldNom.getText();
         String prenom = textFieldPrenom.getText();
         String email = textFieldEmailInscription.getText();
@@ -94,20 +94,40 @@ public class AuthentificationController {
             }
         }
 
-        // Ajouter la nouvelle ligne avec le nouvel utilisateur
-        String newUser = nom + ";" + prenom + ";"
-                + email + ";" + password + ";" + cleApi;
-        existingLines.add(newUser);
-        labelError2.setText("Votre compte a bien été créé!");
+        // Créer un booléen qui va permettre de voir si l'email est déjà dans le fichier
+        boolean emailExists = existingLines.stream().anyMatch(line -> line.contains(email));
 
-        // Écrire toutes les lignes dans le fichier CSV
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(registeredUser))) {
-            for (String line : existingLines) {
-                writer.write(line);
-                writer.newLine();
+        // Si l'email existe, envoyer un message d'erreur
+        if (emailExists) {
+            labelError2.setText("Cette adresse e-mail est déjà utilisée");
+        }
+        else {
+            // Si l'un des champs n'est pas rempli, envoyer un message d'erreur
+            if (nom.isEmpty() || prenom.isEmpty() || email.isEmpty() || emailConfirm.isEmpty() || password.isEmpty() || passwordConfirm.isEmpty() || cleApi.isEmpty()) {
+                labelError2.setText("Tous les champs doivent être remplis.");
+            }
+            // Sinon, vérifier si les mots de passe et les emails sont corrects
+            else if (!Objects.equals(password, passwordConfirm) || !Objects.equals(email, emailConfirm)) {
+                labelError2.setText("Les mots de passe ou les emails ne correspondent pas.");
+            }
+            // Ajouter la nouvelle ligne avec le nouvel utilisateur
+            else {
+                String newUser = nom + ";" + prenom + ";"
+                        + email + ";" + password + ";" + cleApi;
+                existingLines.add(newUser);
+                labelError2.setText("Votre compte a bien été créé!");
+
+                // Écrire toutes les lignes dans le fichier CSV
+                try (BufferedWriter writer = new BufferedWriter(new FileWriter(registeredUser))) {
+                    for (String line : existingLines) {
+                        writer.write(line);
+                        writer.newLine();
+                    }
+                }
             }
         }
     }
+
 
     @FXML
     private void saveButtonClicked() {

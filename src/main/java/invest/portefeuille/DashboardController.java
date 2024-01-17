@@ -37,6 +37,7 @@ public class DashboardController implements Initializable {
 
   @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+      AffichageButton();
       items.addAll(mesWallet);
       //System.out.println(items);
 

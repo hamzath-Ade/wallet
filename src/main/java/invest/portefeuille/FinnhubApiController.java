@@ -1,6 +1,7 @@
 package invest.portefeuille;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.json.JSONObject;
 
@@ -12,21 +13,21 @@ import java.net.URL;
 public class FinnhubApiController {
 
     @FXML
-    private TextField textField1;
+    private Label labelPrixActif1;
 
     @FXML
-    private TextField textField2;
+    private Label labelPrixActif2;
 
     @FXML
-    private TextField textField3;
+    private Label labelPrixActif3;
 
     public void initialize() {
-        fetchAndDisplayData("AAPL", textField1);
-        fetchAndDisplayData("GOOGL", textField2);
-        fetchAndDisplayData("MSFT", textField3);
+        fetchAndDisplayData("AAPL", labelPrixActif1);
+        fetchAndDisplayData("GOOGL", labelPrixActif2);
+        fetchAndDisplayData("MSFT", labelPrixActif3);
     }
 
-    private void fetchAndDisplayData(String symbol, TextField textField) {
+    private void fetchAndDisplayData(String symbol, Label label) {
         try {
             // Clé API Finnhub utilisée pour la requête
             String apiKey = "cmhj8mhr01qmgvctraqgcmhj8mhr01qmgvctrar0";
@@ -56,7 +57,7 @@ public class FinnhubApiController {
             long timestamp = jsonObject.getLong("t"); // "t" représente le timestamp
 
             // Affichage des données dans le TextField
-            textField.setText("Prix actuel : " + currentPrice + "\nTimestamp : " + timestamp);
+            label.setText("Prix actuel : " + currentPrice + "\nTimestamp : " + timestamp);
 
         } catch (Exception e) {
             e.printStackTrace();

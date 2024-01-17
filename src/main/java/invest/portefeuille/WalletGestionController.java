@@ -115,5 +115,5 @@ public class WalletGestionController implements Initializable {
             e.printStackTrace();
 
         }
-}
+    }
 }

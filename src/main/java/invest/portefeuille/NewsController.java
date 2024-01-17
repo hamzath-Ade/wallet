@@ -3,11 +3,16 @@ package invest.portefeuille;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -18,6 +23,8 @@ public class NewsController {
 
     @FXML
     ListView listNews;
+    @FXML
+    Label labelRafraichissement;
 
     List<String> articles = new ArrayList<>();
     ObservableList<String> items = FXCollections.observableArrayList();
@@ -71,6 +78,31 @@ public class NewsController {
 
         // Création de la vue de la liste
         listNews.setItems(items);
+    }
+
+    @FXML
+    public void Rafraichir(){
+        obtenirNews();
+        labelRafraichissement.setText("La liste contient les dernières actualités");
+    }
+    @FXML
+    public void Retour() throws IOException {
+
+
+        try {
+            // Charge le fichier FXML de la page precedente
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard.fxml"));
+            Parent root = loader.load();
+
+            // Crée une nouvelle scène
+            Scene nouvelleScene = new Scene(root);
+
+            Main.authentification.setScene(nouvelleScene);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
     }
 
 }

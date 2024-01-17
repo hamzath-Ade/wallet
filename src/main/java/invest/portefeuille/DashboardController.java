@@ -2,16 +2,12 @@ package invest.portefeuille;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -24,7 +20,6 @@ import java.net.URL;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -109,15 +104,29 @@ public class DashboardController implements Initializable {
     }
 
     @FXML
-    protected void moreInformations(){
+    protected void Paramètre(){
 
+        try {
+            // Charge le fichier FXML de la page parametre
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("parametre.fxml"));
+            Parent root = loader.load();
+
+            // Crée une nouvelle scène
+            Scene nouvelleScene = new Scene(root);
+
+            Main.authentification.setScene(nouvelleScene);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
 
     }
 @FXML
     public void creerWallet() {
 
     try {
-        // Charge le fichier FXML de la page precedente
+        // Charge le fichier FXML de la page de création de wallet
         FXMLLoader loader = new FXMLLoader(getClass().getResource("walletGestion.fxml"));
         Parent root = loader.load();
 
@@ -130,7 +139,25 @@ public class DashboardController implements Initializable {
         e.printStackTrace();
 
     }
-    }
+  }
 
+    @FXML
+    public void voirActus() {
+
+        try {
+            // Charge le fichier FXML de la page des actus
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("news.fxml"));
+            Parent root = loader.load();
+
+            // Crée une nouvelle scène
+            Scene nouvelleScene = new Scene(root);
+
+            Main.authentification.setScene(nouvelleScene);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+    }
 
 }

@@ -1,13 +1,10 @@
 package invest.portefeuille;
 
-import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -106,8 +103,8 @@ public class ParametreController {
     @FXML
     private TextField textFieldNom, textFieldPrenom, textFieldEmail, textFieldOldPassword, textFieldNewPassword,textFieldNewPasswordConfirm;
     @FXML
-    public void parametreEnregistrer(){
-        String registeredUser = "C:/Users/mathu/IdeaProjects/wallet/Compte.csv";
+    public void saveModification(){
+        String registeredUser = "Compte.csv";
         String nom=textFieldNom.getText();
         String prenom = textFieldPrenom.getText();
         String email = textFieldEmail.getText();
@@ -136,5 +133,29 @@ public class ParametreController {
 
 
     }
+
+    @FXML
+    public void pagePrecedente(){
+
+        try {
+            // Charge le fichier FXML de la page parametre
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard.fxml"));
+            Parent root = loader.load();
+
+            // Crée une nouvelle scène
+            Scene nouvelleScene = new Scene(root);
+
+            Main.authentification.setScene(nouvelleScene);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+
+    }
+   /* @FXML
+    public void savenewinformation(){
+
+    }*/
 
 }

@@ -1,29 +1,53 @@
 package invest.portefeuille;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.List;
+import java.util.ResourceBundle;
 
-public class DashboardController {
+import javafx.fxml.Initializable;
+
+public class DashboardController implements Initializable {
 
     @FXML
     private LineChart<String,Double>  diagramview;
+    @FXML
+    ListView listView;
 
+    List<String> mesWallet = WalletGestionController.mesWallet ;
+    ObservableList<String> items = FXCollections.observableArrayList();
+
+  @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+      items.addAll(mesWallet);
+      //System.out.println(items);
+
+      // Création de la vue de la liste
+      //listView = new ListView<>(items);
+      listView.setItems(items);
+    }
 
     @FXML
     protected void AffichageButton() {
@@ -32,7 +56,7 @@ public class DashboardController {
 
         try {
             String apiKey = "coinranking47b4fd6e60c7f67669e1e6a0eb59c257e12baf5e9bec70a3";
-            URL url = new URL("https://api.coinranking.com/v2/coin/Qwsogvtv82FCd/history?apiKey=" + apiKey);
+            URL url = new URL("https://api.coinranking.com/v2/coin/Qwsogvtv82FCd/history?timePeriod=1y"/*apiKey=" + apiKey*/);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.connect();
@@ -84,9 +108,26 @@ public class DashboardController {
     @FXML
     protected void moreInformations(){
 
+
     }
 @FXML
-    public void converttoeuro() {
+    public void creerWallet() {
+
+    try {
+        // Charge le fichier FXML de la page precedente
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("walletGestion.fxml"));
+        Parent root = loader.load();
+
+        // Crée une nouvelle scène
+        Scene nouvelleScene = new Scene(root);
+
+        Main.authentification.setScene(nouvelleScene);
+
+    } catch (IOException e) {
+        e.printStackTrace();
+
     }
+    }
+
 
 }

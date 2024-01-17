@@ -24,6 +24,7 @@ import java.net.URL;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -73,8 +74,8 @@ public class DashboardController implements Initializable {
 
             JSONObject data = jsonObject.getJSONObject("data");
 
-            System.out.println(response.toString());
-            System.out.println(jsonObject);
+           // System.out.println(response.toString());
+          //  System.out.println(jsonObject);
 
             JSONArray historyArray = data.getJSONArray("history");
 
@@ -83,16 +84,18 @@ public class DashboardController implements Initializable {
                 String price = historyObject.getString("price");
                 long timestamp = historyObject.getLong("timestamp");
 
-                // Convertir la chaîne de caractères en Double
+                // Convertit la chaîne de caractères en Double
                 double priceValue = Double.parseDouble(price);
 
-                // Convertir le timestamp en LocalDateTime
+                // Convertit le timestamp en LocalDateTime
                 LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp), ZoneId.systemDefault());
 
-                // Formatter la date au format HH:mm:ss
+                // Formatte la date au format HH:mm:ss
                 String formattedTime = dateTime.format(java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss"));
+                // Formatte la date au format mois/année
+                //String formattedDate = dateTime.format(DateTimeFormatter.ofPattern("MM/yyyy"));
 
-                // Ajouter la paire de valeurs au graphique
+                // Ajout de la paire de valeurs au graphique
                 series.getData().add(new XYChart.Data<String,Double>( formattedTime,priceValue));
             }
 

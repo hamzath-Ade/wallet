@@ -1,29 +1,54 @@
 package invest.portefeuille;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.List;
+import java.util.ResourceBundle;
 
-public class DashboardController {
+import javafx.fxml.Initializable;
+
+public class DashboardController implements Initializable{
 
     @FXML
     private LineChart<String,Double>  diagramview;
+    @FXML
+    ListView listView;
 
+    List<WalletGestion> mesWallet = WalletGestionController.mesWallet;
+    ObservableList<WalletGestion> items = FXCollections.observableArrayList();
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        for (WalletGestion wallet : mesWallet ) {
+            items.add(wallet);
+        }
+
+
+        // Création de la vue de la liste
+        ListView<WalletGestion> listView = new ListView<>(items);
+    }
 
     @FXML
     protected void AffichageButton() {
@@ -86,7 +111,23 @@ public class DashboardController {
 
     }
 @FXML
-    public void converttoeuro() {
+    public void creerWallet() {
+
+    try {
+        // Charge le fichier FXML de la page precedente
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("walletGestion.fxml"));
+        Parent root = loader.load();
+
+        // Crée une nouvelle scène
+        Scene nouvelleScene = new Scene(root);
+
+        Main.authentification.setScene(nouvelleScene);
+
+    } catch (IOException e) {
+        e.printStackTrace();
+
     }
+    }
+
 
 }

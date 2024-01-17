@@ -68,7 +68,7 @@ public class AuthentificationController {
         }
     }
 public void inscription()throws IOException{
-    String registeredUser = "C:/Users/mathu/IdeaProjects/wallet/Compte.csv";
+    String registeredUser = "Compte.csv";
     String nom= textFieldNom.getText();
     String prenom= textFieldPrenom.getText();
     String email=textFieldEmailInscription.getText();

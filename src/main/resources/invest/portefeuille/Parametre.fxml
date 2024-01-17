@@ -1,25 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="invest.portefeuille.ParametreController">
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="698.0">
-        <Label fx:id="email" layoutX="51.0" layoutY="199.0" text="Email" />
-        <Label fx:id="nom" layoutX="52.0" layoutY="102.0" text="Nom" />
-        <Button fx:id="back" layoutY="1.0" mnemonicParsing="false" onAction="#pageprecedente" text="Back" />
-        <Label fx:id="prenom" layoutX="53.0" layoutY="150.0" text="Prenom" />
-        <Label fx:id="confirmationmdp" layoutX="39.0" layoutY="321.0" text="Confirmer nouveau mot de passe" />
-        <Label fx:id="nouveaumdp" layoutX="39.0" layoutY="281.0" text="Nouveau mot de passe" />
-        <TextField fx:id="textFieldPrenom" layoutX="221.0" layoutY="146.0" />
-        <TextField fx:id="textFieldEmail" layoutX="221.0" layoutY="195.0" />
-        <TextField fx:id="textFieldOldPassword" layoutX="221.0" layoutY="237.0" />
-        <TextField fx:id="textFieldNewPassword" layoutX="221.0" layoutY="277.0" />
-        <TextField fx:id="textFieldNewPasswordConfirm" layoutX="221.0" layoutY="317.0" />
-        <TextField fx:id="textFieldNom" layoutX="221.0" layoutY="98.0" />
-        <Label layoutX="46.0" layoutY="241.0" prefHeight="0.0" prefWidth="28.0" />
-        <Label fx:id="ancienmdp" layoutX="39.0" layoutY="241.0" text="Ancien mot de passe" />
-        <Button fx:id="valider" layoutX="370.0" layoutY="342.0" mnemonicParsing="false" onAction="#savenewinformation" text="Valider" />
-        <TitledPane fx:id="parametre" layoutX="200.0" layoutY="1.0" prefHeight="26.0" prefWidth="96.0" text="Parametre" />
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="599.0" style="-fx-background-color: #FFF5EE;">
+        <Label fx:id="email" layoutX="84.0" layoutY="165.0" text="Email" />
+        <Label fx:id="nom" layoutX="80.0" layoutY="80.0" text="Nom" />
+        <Button fx:id="back" layoutY="1.0" mnemonicParsing="false" onAction="#pageprecedente" text="Back">
+         <effect>
+            <SepiaTone level="0.26" />
+         </effect></Button>
+        <Label fx:id="prenom" layoutX="76.0" layoutY="119.0" text="Prenom" />
+        <Label fx:id="confirmationmdp" layoutX="20.0" layoutY="290.0" text="Confirmer nouveau mot de passe" />
+        <Label fx:id="nouveaumdp" layoutX="47.0" layoutY="249.0" text="Nouveau mot de passe" />
+        <TextField fx:id="textFieldPrenom" layoutX="221.0" layoutY="115.0" prefHeight="25.0" prefWidth="315.0" />
+        <TextField fx:id="textFieldEmail" layoutX="221.0" layoutY="161.0" prefHeight="25.0" prefWidth="315.0" />
+        <TextField fx:id="textFieldOldPassword" layoutX="221.0" layoutY="204.0" prefHeight="25.0" prefWidth="315.0" />
+        <TextField fx:id="textFieldNewPassword" layoutX="221.0" layoutY="245.0" prefHeight="25.0" prefWidth="315.0" />
+        <TextField fx:id="textFieldNewPasswordConfirm" layoutX="221.0" layoutY="286.0" prefHeight="25.0" prefWidth="315.0" />
+        <TextField fx:id="textFieldNom" layoutX="221.0" layoutY="67.0" prefHeight="25.0" prefWidth="315.0" />
+        <Label fx:id="ancienmdp" layoutX="49.0" layoutY="208.0" text="Ancien mot de passe" />
+        <Button fx:id="valider" layoutX="274.0" layoutY="345.0" mnemonicParsing="false" onAction="#savenewinformation" text="Valider">
+         <effect>
+            <SepiaTone level="0.26" />
+         </effect></Button>
+        <TitledPane fx:id="parametre" collapsible="false" layoutX="240.0" layoutY="7.0" prefHeight="26.0" prefWidth="96.0" text="Paramètre" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+         <effect>
+            <SepiaTone level="0.26" />
+         </effect></TitledPane>
     </AnchorPane>
 </ScrollPane>

@@ -37,7 +37,7 @@ public class AuthentificationController {
     private TextField textFieldCleApi;
     @FXML
     public void connexion() throws IOException {
-        String registeredUser = "C:/Users/mathu/IdeaProjects/wallet/Compte.csv";
+        String registeredUser = "Compte.csv";
         String email = textFieldEmailConnexion.getText();
         String password = textFieldPasswordConnexion.getText();
         Label label =labelError;

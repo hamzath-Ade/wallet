@@ -1,23 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="invest.portefeuille.AuthentificationController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="728.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="invest.portefeuille.AuthentificationController">
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="447.0" prefWidth="736.0">
         <SplitPane dividerPositions="0.4617524339360223" prefHeight="432.0" prefWidth="721.0">
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="397.0" prefWidth="250.0">
-                <TextField fx:id="textFieldEmailConnexion" layoutX="127.0" layoutY="100.0" />
-                <TextField fx:id="textFieldPasswordConnexion" layoutX="127.0" layoutY="144.0" />
-                <Label layoutX="36.0" layoutY="104.0" text="email" />
-                <Label layoutX="14.0" layoutY="148.0" text="mot de passe" />
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="397.0" prefWidth="250.0" style="-fx-background-color: #FFF5EE;">
+                <TextField fx:id="textFieldEmailConnexion" layoutX="127.0" layoutY="115.0" />
+                <TextField fx:id="textFieldPasswordConnexion" layoutX="127.0" layoutY="179.0" />
+                <Label layoutX="38.0" layoutY="121.0" text="Email">
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font></Label>
+                <Label layoutX="21.0" layoutY="184.0" text="Mot de passe">
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font></Label>
             <Label fx:id="labelError" layoutX="7.0" layoutY="225.0" prefHeight="37.0" prefWidth="308.0" text="  " />
-                <Button layoutX="113.0" layoutY="277.0" mnemonicParsing="false" onAction="#connexion" text="Valider" />
-                <TitledPane animated="false" layoutX="36.0" layoutY="14.0" prefHeight="24.0" prefWidth="182.0" text="CONNEXION">
+                <Button layoutX="114.0" layoutY="277.0" mnemonicParsing="false" onAction="#connexion" text="Valider">
+               <effect>
+                  <SepiaTone level="0.26" />
+               </effect>
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="14.0" />
+               </font></Button>
+                <TitledPane animated="false" collapsible="false" layoutX="65.0" layoutY="18.0" prefHeight="24.0" prefWidth="182.0" text="CONNEXION">
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+               <effect>
+                  <SepiaTone level="0.26" />
+               </effect>
                 </TitledPane>
+            <Label layoutX="10.0" layoutY="349.0" prefHeight="17.0" prefWidth="308.0" text="Si vous n'avez pas de compte, créez-vous en juste à côté -&gt;" textAlignment="CENTER">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
             </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="92.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="92.0" style="-fx-background-color: #FFF5EE;">
                 <TextField fx:id="textFieldPrenom" layoutX="199.0" layoutY="112.0" />
                 <TextField fx:id="textFieldEmailInscription" layoutX="199.0" layoutY="158.0" />
                 <TextField fx:id="textFieldPasswordConfirmInscription" layoutX="199.0" layoutY="269.0" />
@@ -25,16 +50,49 @@
                 <TextField fx:id="textFieldEmailConfirmInscription" layoutX="199.0" layoutY="194.0" />
                 <TextField fx:id="textFieldCleApi" layoutX="199.0" layoutY="302.0" />
                 <TextField fx:id="textFieldNom" layoutX="199.0" layoutY="74.0" />
-                <Label layoutX="25.0" layoutY="162.0" text="Email" />
-                <Label layoutX="28.0" layoutY="116.0" text="Prenom" />
-                <Label layoutX="28.0" layoutY="78.0" text="Nom" />
-                <Label layoutX="28.0" layoutY="235.0" text="Mot de passe" />
-                <Label layoutX="21.0" layoutY="198.0" text="Confirmation d'email" />
-                <Label layoutX="28.0" layoutY="306.0" text="Clé d'API" />
-                <Label layoutX="1.0" layoutY="273.0" text="Confirmation mot de passe" />
-                <Button layoutX="158.0" layoutY="380.0" mnemonicParsing="false" text="Save" />
-                <TitledPane animated="false" layoutX="78.0" layoutY="14.0" prefHeight="23.0" prefWidth="171.0" text="PREMIERE VISITE">
+                <Label layoutX="20.0" layoutY="162.0" prefHeight="15.0" prefWidth="150.0" text="Email" textAlignment="CENTER">
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font></Label>
+                <Label layoutX="19.0" layoutY="116.0" prefHeight="15.0" prefWidth="150.0" text="Prénom" textAlignment="CENTER">
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font></Label>
+                <Label layoutX="21.0" layoutY="78.0" prefHeight="15.0" prefWidth="150.0" text="Nom" textAlignment="CENTER">
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font></Label>
+                <Label layoutX="21.0" layoutY="235.0" prefHeight="15.0" prefWidth="150.0" text="Mot de passe">
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font></Label>
+                <Label layoutX="21.0" layoutY="198.0" prefHeight="15.0" prefWidth="150.0" text="Confirmation d'Email">
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font></Label>
+                <Label layoutX="21.0" layoutY="306.0" prefHeight="17.0" prefWidth="150.0" text="Clé d'API">
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font></Label>
+                <Label layoutX="20.0" layoutY="273.0" prefHeight="15.0" prefWidth="150.0" text="Confirmation mot de passe">
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font></Label>
+                <Button layoutX="158.0" layoutY="380.0" mnemonicParsing="false" text="Save">
+               <effect>
+                  <SepiaTone level="0.26" />
+               </effect>
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="14.0" />
+               </font></Button>
+                <TitledPane animated="false" collapsible="false" layoutX="92.0" layoutY="14.0" prefHeight="23.0" prefWidth="171.0" text="PREMIERE VISITE">
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               <font>
+                  <Font name="Times New Roman Bold" size="20.0" />
+               </font>
+               <effect>
+                  <SepiaTone level="0.26" />
+               </effect>
                 </TitledPane>
             <Label fx:id="labelError2" layoutX="26.0" layoutY="334.0" prefHeight="31.0" prefWidth="313.0" text=" " />
             </AnchorPane>

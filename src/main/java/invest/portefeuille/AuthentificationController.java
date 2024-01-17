@@ -36,6 +36,10 @@ public class AuthentificationController {
     @FXML
     private TextField textFieldCleApi;
     @FXML
+    private Button saveButton;
+
+
+    @FXML
     public void connexion() throws IOException {
         String registeredUser = "Compte.csv";
         String email = textFieldEmailConnexion.getText();

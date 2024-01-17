@@ -8,6 +8,7 @@ module invest.portefeuille {
     requires java.net.http;
     requires org.json;
     requires org.apache.commons.lang3;
+    requires org.apache.poi.poi;
     //requires com.fasterxml.jackson.databind;
 
     opens invest.portefeuille to javafx.fxml;

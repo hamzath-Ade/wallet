@@ -17,9 +17,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -83,16 +85,21 @@ public class DashboardController implements Initializable {
                 // Convertit la chaîne de caractères en Double
                 double priceValue = Double.parseDouble(price);
 
-                // Convertit le timestamp en LocalDateTime
-                LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp), ZoneId.systemDefault());
 
-                // Formatte la date au format HH:mm:ss
-                String formattedTime = dateTime.format(java.time.format.DateTimeFormatter.ofPattern("HH:mm:ss"));
-                // Formatte la date au format mois/année
-                //String formattedDate = dateTime.format(DateTimeFormatter.ofPattern("MM/yyyy"));
+
+
+                // Création d'une instance de Date à partir du timestamp
+                Date date = new Date(timestamp);
+
+                // Création d'un objet SimpleDateFormat avec le format souhaité
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+
+                // Formatage de la date
+                String dateFormatee = dateFormat.format(dateFormat);
+
 
                 // Ajout de la paire de valeurs au graphique
-                series.getData().add(new XYChart.Data<String,Double>( formattedTime,priceValue));
+                series.getData().add(new XYChart.Data<String,Double>( dateFormatee,priceValue));
             }
 
 

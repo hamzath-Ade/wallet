@@ -8,16 +8,18 @@ public class WalletGestion extends Portefeuille {
     // valeur de ces differents actifs
 
 
-    static Random random = new Random();
+     Random random = new Random();
     private final String owner;
-    private  int token = random.nextInt(100);
+    private  int token = random.nextInt();
+
     private  double valeurPortefeuille = 0.0;
     private String description;
 
     //CONSTRUCTEUR
-    public WalletGestion(String owner, String description) {
+    public WalletGestion(String owner, String description, Double valeurPortefeuille) {
         this.owner = owner;
         this.description = description;
+        this.valeurPortefeuille = valeurPortefeuille;
     }
 
     //Les getters
@@ -26,5 +28,9 @@ public class WalletGestion extends Portefeuille {
     }
     public   int getToken(){
         return token;
+    }
+
+    public double getValeurPortefeuille() {
+        return valeurPortefeuille;
     }
 }

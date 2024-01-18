@@ -31,17 +31,19 @@ public class DashboardController implements Initializable {
     @FXML
     ListView listView;
 
+    public static double prixBitcoin ;
+
     List<String> mesWallet = WalletGestionController.mesWallet ;
     ObservableList<String> items = FXCollections.observableArrayList();
 
   @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
       lineChartPrix();
+      prixBitcoin();
+
       items.addAll(mesWallet);
-      //System.out.println(items);
 
       // Création de la vue de la liste
-      //listView = new ListView<>(items);
       listView.setItems(items);
     }
 
@@ -289,5 +291,37 @@ public class DashboardController implements Initializable {
             e.printStackTrace();
         }
     }
+
+
+    public void prixBitcoin(){
+
+
+        try {
+            String apiKey = "coinranking47b4fd6e60c7f67669e1e6a0eb59c257e12baf5e9bec70a3";
+            URL url = new URL("https://api.coinranking.com/v2/coin/Qwsogvtv82FCd/price"/*apiKey=" + apiKey*/);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.connect();
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String line;
+            StringBuilder response = new StringBuilder();
+
+            JSONObject jsonObject = new JSONObject();
+            while ((line = reader.readLine()) != null) {
+                response.append(line);
+            }
+            jsonObject = new JSONObject(response.toString());
+
+            JSONObject data = jsonObject.getJSONObject("data");
+            String price = data.getString("price");
+            prixBitcoin = Double.parseDouble(price);
+            // System.out.println(response.toString());
+            //System.out.println(prixBitcoin);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

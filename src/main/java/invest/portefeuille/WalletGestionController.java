@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import org.apache.poi.ss.usermodel.*;
 
-public class WalletGestionController implements Initializable {
+public class WalletGestionController  {
 
     @FXML
     Label afficheMessage;
@@ -29,6 +29,10 @@ public class WalletGestionController implements Initializable {
     TextField textFieldNomWallet;
     @FXML
     TextField textFieldDescription;
+    @FXML
+    TextField montantAchete;
+    @FXML
+    Label labelAchat;
 
     public WalletGestion wallet;
 
@@ -37,8 +41,10 @@ public class WalletGestionController implements Initializable {
     // Création d'une liste de couples
     public List<Pair<String, String>> pairCryptoPrix = new ArrayList<>();
 
-    @Override
-    public void initialize(URL urll, ResourceBundle resourceBundle) {
+
+
+
+    public void initialize() {
 
         try {
             String apiKey = "coinranking47b4fd6e60c7f67669e1e6a0eb59c257e12baf5e9bec70a3";
@@ -89,8 +95,9 @@ public class WalletGestionController implements Initializable {
     public void creer() {
     String nomWallet = textFieldDescription.getText();
     String description = textFieldDescription.getText();
+     double valeurPortefeuille = 0.0;
 
-    wallet = new WalletGestion(nomWallet, description);
+    wallet = new WalletGestion(nomWallet, description, valeurPortefeuille);
     mesWallet.add(nomWallet);
 
     afficheMessage.setText("Wallet créé avec succès");
@@ -116,4 +123,36 @@ public class WalletGestionController implements Initializable {
 
         }
     }
+
+    @FXML
+    public void achatBitcoin(){
+         double monSolde = wallet.getValeurPortefeuille();
+         double bitcoinAchete = wallet.getMesBitcoin();
+         double montant = Double.parseDouble(montantAchete.getText());
+         boolean payed;
+         double soldeApresTransaction;
+
+
+           try {
+               soldeApresTransaction = monSolde - montant ;
+
+            if( soldeApresTransaction >=0 ){
+                monSolde = soldeApresTransaction;
+                bitcoinAchete = bitcoinAchete + (montant/DashboardController.prixBitcoin) ;
+                payed = true;
+            }
+            else {
+                labelAchat.setText("Le solde du compte est insufisant");
+                payed = false;
+            }
+
+
+           } catch (Exception e) {
+               throw new RuntimeException(e);
+           }
+
+
+    }
+
+
 }

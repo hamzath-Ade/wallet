@@ -3,12 +3,16 @@ package invest.portefeuille;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -140,6 +144,24 @@ public class FinnhubApiController {
 
     public void actualiser(){
         listCryptoPrix();
+    }
+
+    public void Retour(){
+
+        try {
+            // Charge le fichier FXML de la page des actus
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard.fxml"));
+            Parent root = loader.load();
+
+            // Crée une nouvelle scène
+            Scene nouvelleScene = new Scene(root);
+
+            Main.authentification.setScene(nouvelleScene);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
     }
 }
 

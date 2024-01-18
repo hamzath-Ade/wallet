@@ -76,8 +76,8 @@ public class DashboardController implements Initializable {
           //  System.out.println(jsonObject);
 
             JSONArray historyArray = data.getJSONArray("history");
-
-            for (int i = 0; i < historyArray.length(); i++) {
+//int i = 0; i < historyArray.length(); i++ int i = historyArray.length() ; 0 <i ; i--
+            for (int i = historyArray.length() -1 ; 0 <= i ; i--) {
                 JSONObject historyObject = historyArray.getJSONObject(i);
                 String price = historyObject.getString("price");
                 long timestamp = historyObject.getLong("timestamp");

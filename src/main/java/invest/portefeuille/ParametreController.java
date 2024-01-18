@@ -106,7 +106,7 @@ public class ParametreController {
     @FXML
     private TextField textFieldNom, textFieldPrenom, textFieldEmail, textFieldOldPassword, textFieldNewPassword,textFieldNewPasswordConfirm;
     @FXML
-    public void parametreEnregistrer(){
+    public void saveModification(){
         String registeredUser = "Compte.csv";
         String nom=textFieldNom.getText();
         String prenom = textFieldPrenom.getText();
@@ -137,13 +137,23 @@ public class ParametreController {
 
     }
 
-    @FXML
-    public void saveModification(){
 
-    }
     @FXML
     public void pagePrecedente(){
+        try {
+            // Charge le fichier FXML de la page parametre
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard.fxml"));
+            Parent root = loader.load();
 
+            // Crée une nouvelle scène
+            Scene nouvelleScene = new Scene(root);
+
+            Main.authentification.setScene(nouvelleScene);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
     }
 
 }

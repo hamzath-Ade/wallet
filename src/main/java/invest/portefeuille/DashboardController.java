@@ -85,18 +85,12 @@ public class DashboardController implements Initializable {
                 // Convertit la chaîne de caractères en Double
                 double priceValue = Double.parseDouble(price);
 
-
-
-
                 // Création d'une instance de Date à partir du timestamp
                 Date date = new Date(timestamp*1000);
-
                 // Création d'un objet SimpleDateFormat avec le format souhaité
-                //SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 // Formatage de la date
                 String dateFormatee = dateFormat.format(date);
-
 
                 // Ajout de la paire de valeurs au graphique
                 series.getData().add(new XYChart.Data<String,Double>( dateFormatee,priceValue));

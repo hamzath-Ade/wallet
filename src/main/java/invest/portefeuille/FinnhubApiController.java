@@ -9,6 +9,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class FinnhubApiController {
 
@@ -56,8 +58,14 @@ public class FinnhubApiController {
             double currentPrice = jsonObject.getDouble("c"); // "c" représente le prix actuel
             long timestamp = jsonObject.getLong("t"); // "t" représente le timestamp
 
+            Date date = new Date(timestamp*1000);
+            // Création d'un objet SimpleDateFormat avec le format souhaité
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            // Formatage de la date
+            String dateFormatee = dateFormat.format(date);
+
             // Affichage des données dans le TextField
-            label.setText("Prix actuel : " + currentPrice + "\nTimestamp : " + timestamp);
+            label.setText("Prix actuel : " + currentPrice + "Timestamp : " + dateFormatee);
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -162,4 +162,22 @@ public class DashboardController implements Initializable {
         }
     }
 
+    public void voirPrixEnTempsReel(){
+
+        try {
+            // Charge le fichier FXML de la page des actus
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("finnhubApi.fxml"));
+            Parent root = loader.load();
+
+            // Crée une nouvelle scène
+            Scene nouvelleScene = new Scene(root);
+
+            Main.authentification.setScene(nouvelleScene);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+    }
+
 }

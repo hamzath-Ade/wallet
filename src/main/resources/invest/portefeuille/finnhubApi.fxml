@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="invest.portefeuille.FinnhubApiController">
+<AnchorPane prefHeight="443.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="invest.portefeuille.FinnhubApiController">
    <children>
       <Label fx:id="labelActif1" layoutX="21.0" layoutY="86.0" prefHeight="17.0" prefWidth="94.0" text="nom actifc 1" />
       <Label fx:id="labelActif2" layoutX="21.0" layoutY="115.0" prefHeight="17.0" prefWidth="84.0" text="nom actifc 2" />
@@ -12,5 +12,6 @@
       <Label fx:id="labelPrixActif2" layoutX="134.0" layoutY="116.0" prefHeight="16.0" prefWidth="461.0" text="Valeur de l'actif 2 et timestampe" />
       <Label fx:id="labelPrixActif3" layoutX="134.0" layoutY="143.0" prefHeight="16.0" prefWidth="461.0" text="Valeur de l'actif 3 et timestampes" />
       <ListView fx:id="listCryptoPrix" layoutX="12.0" layoutY="173.0" prefHeight="200.0" prefWidth="440.0" />
+      <Button layoutX="53.0" layoutY="393.0" mnemonicParsing="false" text="Actualiser" onAction="#actualiser" />
    </children>
 </AnchorPane>

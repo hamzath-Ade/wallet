@@ -137,5 +137,9 @@ public class FinnhubApiController {
         // Création de la vue de la liste
         listCryptoPrix.setItems(items);
     }
+
+    public void actualiser(){
+        listCryptoPrix();
+    }
 }
 

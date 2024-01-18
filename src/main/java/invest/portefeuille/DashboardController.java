@@ -18,9 +18,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -39,7 +36,7 @@ public class DashboardController implements Initializable {
 
   @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-      AffichageButton();
+      lineChartPrix();
       items.addAll(mesWallet);
       //System.out.println(items);
 
@@ -49,7 +46,7 @@ public class DashboardController implements Initializable {
     }
 
     @FXML
-    protected void AffichageButton() {
+    protected void lineChartPrix() {
         // defining a series
         XYChart.Series<String,Double> series = new XYChart.Series<>();
 
@@ -177,6 +174,119 @@ public class DashboardController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
 
+        }
+    }
+@FXML
+    public void voirPrix3M(){
+    // defining a series
+    XYChart.Series<String,Double> series = new XYChart.Series<>();
+
+    try {
+        String apiKey = "coinranking47b4fd6e60c7f67669e1e6a0eb59c257e12baf5e9bec70a3";
+        URL url = new URL("https://api.coinranking.com/v2/coin/Qwsogvtv82FCd/history?timePeriod=3m"/*apiKey=" + apiKey*/);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("GET");
+        connection.connect();
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        String line;
+        StringBuilder response = new StringBuilder();
+
+        JSONObject jsonObject = new JSONObject();
+        while ((line = reader.readLine()) != null) {
+            response.append(line);
+        }
+        jsonObject = new JSONObject(response.toString());
+
+        JSONObject data = jsonObject.getJSONObject("data");
+
+        // System.out.println(response.toString());
+        //  System.out.println(jsonObject);
+
+        JSONArray historyArray = data.getJSONArray("history");
+//int i = 0; i < historyArray.length(); i++ int i = historyArray.length() ; 0 <i ; i--
+        for (int i = historyArray.length() -1 ; 0 <= i ; i--) {
+            JSONObject historyObject = historyArray.getJSONObject(i);
+            String price = historyObject.getString("price");
+            long timestamp = historyObject.getLong("timestamp");
+
+            // Convertit la chaîne de caractères en Double
+            double priceValue = Double.parseDouble(price);
+
+            // Création d'une instance de Date à partir du timestamp
+            Date date = new Date(timestamp*1000);
+            // Création d'un objet SimpleDateFormat avec le format souhaité
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            // Formatage de la date
+            String dateFormatee = dateFormat.format(date);
+
+            // Ajout de la paire de valeurs au graphique
+            series.getData().add(new XYChart.Data<String,Double>( dateFormatee,priceValue));
+        }
+
+
+        // Déplacer l'ajout de la série en dehors de la boucle for
+        diagramview.getData().add(series);
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    }
+
+    @FXML
+    public void voirPrix24H(){
+// defining a series
+        XYChart.Series<String,Double> series = new XYChart.Series<>();
+
+        try {
+            String apiKey = "coinranking47b4fd6e60c7f67669e1e6a0eb59c257e12baf5e9bec70a3";
+            URL url = new URL("https://api.coinranking.com/v2/coin/Qwsogvtv82FCd/history?timePeriod=24h"/*apiKey=" + apiKey*/);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.connect();
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String line;
+            StringBuilder response = new StringBuilder();
+
+            JSONObject jsonObject = new JSONObject();
+            while ((line = reader.readLine()) != null) {
+                response.append(line);
+            }
+            jsonObject = new JSONObject(response.toString());
+
+            JSONObject data = jsonObject.getJSONObject("data");
+
+            // System.out.println(response.toString());
+            //  System.out.println(jsonObject);
+
+            JSONArray historyArray = data.getJSONArray("history");
+//int i = 0; i < historyArray.length(); i++ int i = historyArray.length() ; 0 <i ; i--
+            for (int i = historyArray.length() -1 ; 0 <= i ; i--) {
+                JSONObject historyObject = historyArray.getJSONObject(i);
+                String price = historyObject.getString("price");
+                long timestamp = historyObject.getLong("timestamp");
+
+                // Convertit la chaîne de caractères en Double
+                double priceValue = Double.parseDouble(price);
+
+                // Création d'une instance de Date à partir du timestamp
+                Date date = new Date(timestamp*1000);
+                // Création d'un objet SimpleDateFormat avec le format souhaité
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                // Formatage de la date
+                String dateFormatee = dateFormat.format(date);
+
+                // Ajout de la paire de valeurs au graphique
+                series.getData().add(new XYChart.Data<String,Double>( dateFormatee,priceValue));
+            }
+
+
+            // Déplacer l'ajout de la série en dehors de la boucle for
+            diagramview.getData().add(series);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

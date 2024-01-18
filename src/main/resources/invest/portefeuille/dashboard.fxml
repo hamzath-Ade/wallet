@@ -19,9 +19,8 @@
                                <NumberAxis side="LEFT" />
                              </yAxis>
                            </LineChart>
-                           <ListView fx:id="listView" layoutX="390.0" layoutY="329.0" prefHeight="141.0" prefWidth="241.0" />
-            <Button fx:id="refreshbutton" layoutX="699.0" layoutY="334.0" mnemonicParsing="false" onAction="#AffichageButton" text="refresh" />
-            <Button fx:id="creerWallet" layoutX="669.0" layoutY="411.0" mnemonicParsing="false" onAction="#creerWallet" text="créer wallet" />
+                           <ListView fx:id="listView" layoutX="178.0" layoutY="323.0" prefHeight="141.0" prefWidth="241.0" />
+            <Button fx:id="refreshbutton" layoutX="699.0" layoutY="334.0" mnemonicParsing="false" onAction="#lineChartPrix" text="refresh" />
             <AnchorPane cacheShape="false" centerShape="false" layoutX="-5.0" layoutY="-5.0" prefHeight="541.0" prefWidth="151.0" scaleShape="false" style="-fx-border-color: #000000;">
                <children>
                   <Pane layoutX="1.0" prefHeight="97.0" prefWidth="152.0" style="-fx-background-color: #000000;" />
@@ -31,7 +30,7 @@
                            <cursor>
                               <Cursor fx:constant="DEFAULT" />
                            </cursor></Button>
-                        <Button layoutX="51.0" layoutY="187.0" mnemonicParsing="false" style="-fx-background-color: #FFF5EE; -fx-border-radius: 30; -fx-background-insets: 0; -fx-border-color: #000000;" text="Wallet">
+                        <Button layoutX="51.0" layoutY="187.0" mnemonicParsing="false" onAction="#creerWallet" style="-fx-background-color: #FFF5EE; -fx-border-radius: 30; -fx-background-insets: 0; -fx-border-color: #000000;" text="créer wallet">
                            <font>
                               <Font name="Times New Roman" size="12.0" />
                            </font></Button>
@@ -48,7 +47,9 @@
                   </Pane>
                </children>
             </AnchorPane>
-            <Button  onAction="#voirPrixEnTempsReel" layoutX="157.0" layoutY="156.0" mnemonicParsing="false" text="Voir prix en temps réel" />
+            <Button layoutX="157.0" layoutY="156.0" mnemonicParsing="false" onAction="#voirPrixEnTempsReel" text="Voir prix en temps réel" />
+            <Button layoutX="701.0" layoutY="382.0" mnemonicParsing="false" onAction="#voirPrix24H" prefHeight="24.0" prefWidth="57.0" text="24H" />
+            <Button layoutX="701.0" layoutY="422.0" mnemonicParsing="false" onAction="#voirPrix3M" prefHeight="24.0" prefWidth="56.0" text="3M" />
                         </children>
                    </AnchorPane>
     </content>

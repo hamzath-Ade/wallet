@@ -3,6 +3,7 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -50,6 +51,11 @@
                         </Button>
                      </children>
                   </Pane>
+                  <ImageView fitHeight="120.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Logo_walletWise" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
             <Button layoutX="634.0" layoutY="78.0" mnemonicParsing="false" onAction="#voirPrixEnTempsReel" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #000000; -fx-background-radius: 30; -fx-background-insets: 0 1 1; -fx-text-fill: WHITE; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );" text="Voir prix en temps réel" />

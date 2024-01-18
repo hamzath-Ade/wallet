@@ -89,13 +89,13 @@ public class DashboardController implements Initializable {
 
 
                 // Création d'une instance de Date à partir du timestamp
-                Date date = new Date(timestamp);
+                Date date = new Date(timestamp*1000);
 
                 // Création d'un objet SimpleDateFormat avec le format souhaité
                 //SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 // Formatage de la date
-                String dateFormatee = dateFormat.format(dateFormat);
+                String dateFormatee = dateFormat.format(date);
 
 
                 // Ajout de la paire de valeurs au graphique

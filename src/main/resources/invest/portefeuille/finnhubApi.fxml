@@ -11,5 +11,6 @@
       <Label fx:id="labelPrixActif1" layoutX="134.0" layoutY="87.0" prefHeight="16.0" prefWidth="461.0" text="valeur de l'actif et timestampe" />
       <Label fx:id="labelPrixActif2" layoutX="134.0" layoutY="116.0" prefHeight="16.0" prefWidth="461.0" text="Valeur de l'actif 2 et timestampe" />
       <Label fx:id="labelPrixActif3" layoutX="134.0" layoutY="143.0" prefHeight="16.0" prefWidth="461.0" text="Valeur de l'actif 3 et timestampes" />
+      <ListView fx:id="listCryptoPrix" layoutX="12.0" layoutY="173.0" prefHeight="200.0" prefWidth="440.0" />
    </children>
 </AnchorPane>

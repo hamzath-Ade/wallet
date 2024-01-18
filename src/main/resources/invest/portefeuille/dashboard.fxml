@@ -3,8 +3,8 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="859.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="invest.portefeuille.DashboardController">
@@ -25,9 +25,9 @@
                            </LineChart>
                            <ListView fx:id="listView" layoutX="180.0" layoutY="306.0" prefHeight="141.0" prefWidth="595.0" />
             <Button fx:id="refreshbutton" layoutX="647.0" layoutY="146.0" mnemonicParsing="false" onAction="#lineChartPrix" prefHeight="25.0" prefWidth="153.0" style="-fx-background-color: #000000; -fx-background-radius: 30; -fx-background-insets: 0 1 1; -fx-text-fill: WHITE; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );" text="refresh" />
-            <AnchorPane cacheShape="false" centerShape="false" layoutX="-5.0" layoutY="-1.0" prefHeight="517.0" prefWidth="152.0" scaleShape="false" style="-fx-border-color: #000000;">
+            <AnchorPane cacheShape="false" centerShape="false" layoutX="-5.0" layoutY="-1.0" prefHeight="488.0" prefWidth="152.0" scaleShape="false" style="-fx-border-color: #000000;">
                <children>
-                  <Pane layoutY="97.0" prefHeight="418.0" prefWidth="150.0" style="-fx-background-color: #FFF5EE; -fx-border-style: #000000;">
+                  <Pane layoutY="106.0" prefHeight="0.0" prefWidth="150.0" style="-fx-background-color: #FFF5EE; -fx-border-style: #000000;">
                      <children>
                         <Button layoutX="25.0" layoutY="133.0" mnemonicParsing="false" onAction="#voirActus" prefHeight="28.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-border-radius: 30; -fx-background-insets: 0; -fx-background-color: #FFF5EE;" text="Actualités">
                            <cursor>
@@ -51,11 +51,18 @@
                         </Button>
                      </children>
                   </Pane>
-                  <ImageView fitHeight="120.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Logo_walletWise.png" />
-                     </image>
-                  </ImageView>
+                  <Pane layoutY="1.0" prefHeight="118.0" prefWidth="151.0" style="-fx-background-color: BLACK;">
+                     <children>
+                        <Label layoutX="14.0" layoutY="43.0" prefHeight="17.0" prefWidth="134.0" style="-fx-text-fill: #FFF5EE;" text="WalletWise" textAlignment="CENTER">
+                           <font>
+                              <Font name="Old English Text MT" size="26.0" />
+                           </font>
+                        </Label>
+                        <Line endX="100.0" layoutX="54.0" layoutY="28.0" startX="-100.0" stroke="SEASHELL" />
+                        <Line endX="100.0" layoutX="57.0" layoutY="37.0" startX="-100.0" stroke="SEASHELL" />
+                        <Line endX="100.0" layoutX="67.0" layoutY="84.0" startX="-100.0" stroke="SEASHELL" />
+                     </children>
+                  </Pane>
                </children>
             </AnchorPane>
             <Button layoutX="634.0" layoutY="78.0" mnemonicParsing="false" onAction="#voirPrixEnTempsReel" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: #000000; -fx-background-radius: 30; -fx-background-insets: 0 1 1; -fx-text-fill: WHITE; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );" text="Voir prix en temps réel" />

@@ -3,6 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="443.0" prefWidth="600.0" style="-fx-background-color: #FFF5EE;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="invest.portefeuille.FinnhubApiController">
@@ -43,5 +44,17 @@
          <font>
             <Font name="Times New Roman Bold Italic" size="13.0" />
          </font></Button>
+      <Pane layoutX="482.0" layoutY="-2.0" prefHeight="83.0" prefWidth="122.0" style="-fx-background-color: black;">
+         <children>
+            <Label layoutX="-1.0" layoutY="27.0" prefHeight="17.0" prefWidth="122.0" text="WalletWise" textFill="SEASHELL">
+               <font>
+                  <Font name="Old English Text MT" size="25.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="21.0" layoutY="14.0" startX="-21.000030517578125" startY="-9.5367431640625E-7" stroke="SEASHELL" />
+            <Line endX="100.0" layoutX="21.0" layoutY="22.0" startX="-21.000030517578125" startY="-9.5367431640625E-7" stroke="SEASHELL" />
+            <Line endX="100.0" layoutX="22.0" layoutY="62.0" startX="-21.000030517578125" startY="-9.5367431640625E-7" stroke="SEASHELL" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

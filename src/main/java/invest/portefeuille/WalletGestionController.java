@@ -78,7 +78,7 @@ public class WalletGestionController  {
                 pairCryptoPrix.add(Pair.of(name, price));
 
             }
-            System.out.println(pairCryptoPrix);
+
 
 
 

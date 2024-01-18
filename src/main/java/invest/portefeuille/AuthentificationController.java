@@ -42,7 +42,7 @@ public class AuthentificationController {
 
     @FXML
     public void connexion() throws IOException {
-        String registeredUser = "C:/Users/elena/IdeaProjects/wallet/Compte.csv";
+        String registeredUser = "Compte.csv";
         String email = textFieldEmailConnexion.getText();
         String password = textFieldPasswordConnexion.getText();
         Label label =labelError;

@@ -15,6 +15,12 @@ import java.util.Date;
 public class FinnhubApiController {
 
     @FXML
+    private Label labelActif1;
+    @FXML
+    private Label labelActif2;
+    @FXML
+    private Label labelActif3;
+    @FXML
     private Label labelPrixActif1;
 
     @FXML
@@ -24,6 +30,10 @@ public class FinnhubApiController {
     private Label labelPrixActif3;
 
     public void initialize() {
+
+        labelActif1.setText("AAPL");
+        labelActif2.setText("GOOGL");
+        labelActif3.setText("MSFT");
         fetchAndDisplayData("AAPL", labelPrixActif1);
         fetchAndDisplayData("GOOGL", labelPrixActif2);
         fetchAndDisplayData("MSFT", labelPrixActif3);
@@ -65,7 +75,7 @@ public class FinnhubApiController {
             String dateFormatee = dateFormat.format(date);
 
             // Affichage des données dans le TextField
-            label.setText("Prix actuel : " + currentPrice + "Timestamp : " + dateFormatee);
+            label.setText("Prix actuel : " + currentPrice + ", date de la mise à jour : " + dateFormatee);
 
         } catch (Exception e) {
             e.printStackTrace();

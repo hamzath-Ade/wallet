@@ -6,10 +6,10 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="invest.portefeuille.FinnhubApiController">
    <children>
       <Label fx:id="labelActif1" layoutX="21.0" layoutY="86.0" prefHeight="17.0" prefWidth="94.0" text="nom actifc 1" />
-      <Label fx:id="labelActif2" layoutX="21.0" layoutY="113.0" prefHeight="17.0" prefWidth="84.0" text="nom actifc 2" />
-      <Label fx:id="labelActif3" layoutX="28.0" layoutY="148.0" prefHeight="17.0" prefWidth="84.0" text="nom actifc 3" />
-      <Label fx:id="labelPrixActif1" layoutX="197.0" layoutY="87.0" prefHeight="16.0" prefWidth="201.0" text="valeur de l'actif et timestampe" />
-      <Label fx:id="labelPrixActif2" layoutX="197.0" layoutY="122.0" text="Valeur de l'actif 2 et timestampe" />
-      <Label fx:id="labelPrixActif3" layoutX="197.0" layoutY="149.0" text="Valeur de l'actif 3 et timestampes" />
+      <Label fx:id="labelActif2" layoutX="21.0" layoutY="115.0" prefHeight="17.0" prefWidth="84.0" text="nom actifc 2" />
+      <Label fx:id="labelActif3" layoutX="21.0" layoutY="142.0" prefHeight="17.0" prefWidth="84.0" text="nom actifc 3" />
+      <Label fx:id="labelPrixActif1" layoutX="134.0" layoutY="87.0" prefHeight="16.0" prefWidth="461.0" text="valeur de l'actif et timestampe" />
+      <Label fx:id="labelPrixActif2" layoutX="134.0" layoutY="116.0" prefHeight="16.0" prefWidth="461.0" text="Valeur de l'actif 2 et timestampe" />
+      <Label fx:id="labelPrixActif3" layoutX="134.0" layoutY="143.0" prefHeight="16.0" prefWidth="461.0" text="Valeur de l'actif 3 et timestampes" />
    </children>
 </AnchorPane>
